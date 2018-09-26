@@ -1,0 +1,9 @@
+D:\Git\CursoOnline\src\CursoOnline.Dominio\bin\Debug\netcoreapp2.0\CursoOnline.Dominio.deps.json
+D:\Git\CursoOnline\src\CursoOnline.Dominio\bin\Debug\netcoreapp2.0\CursoOnline.Dominio.dll
+D:\Git\CursoOnline\src\CursoOnline.Dominio\bin\Debug\netcoreapp2.0\CursoOnline.Dominio.pdb
+D:\Git\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netcoreapp2.0\CursoOnline.Dominio.csprojResolveAssemblyReference.cache
+D:\Git\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netcoreapp2.0\CursoOnline.Dominio.csproj.CoreCompileInputs.cache
+D:\Git\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netcoreapp2.0\CursoOnline.Dominio.AssemblyInfoInputs.cache
+D:\Git\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netcoreapp2.0\CursoOnline.Dominio.AssemblyInfo.cs
+D:\Git\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netcoreapp2.0\CursoOnline.Dominio.dll
+D:\Git\CursoOnline\src\CursoOnline.Dominio\obj\Debug\netcoreapp2.0\CursoOnline.Dominio.pdb
