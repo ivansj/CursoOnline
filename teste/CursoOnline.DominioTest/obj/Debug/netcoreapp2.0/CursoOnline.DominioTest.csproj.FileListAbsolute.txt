@@ -11,3 +11,4 @@ D:\Git\CursoOnline\teste\CursoOnline.DominioTest\obj\Debug\netcoreapp2.0\CursoOn
 D:\Git\CursoOnline\teste\CursoOnline.DominioTest\obj\Debug\netcoreapp2.0\CursoOnline.DominioTest.AssemblyInfo.cs
 D:\Git\CursoOnline\teste\CursoOnline.DominioTest\obj\Debug\netcoreapp2.0\CursoOnline.DominioTest.dll
 D:\Git\CursoOnline\teste\CursoOnline.DominioTest\obj\Debug\netcoreapp2.0\CursoOnline.DominioTest.pdb
+D:\Git\CursoOnline\teste\CursoOnline.DominioTest\obj\Debug\netcoreapp2.0\CursoOnline.DominioTest.csprojResolveAssemblyReference.cache
