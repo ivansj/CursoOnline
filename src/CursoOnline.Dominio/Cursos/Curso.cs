@@ -1,9 +1,10 @@
-﻿using System;
+﻿using CursoOnline.Dominio.Base;
+using System;
 
 namespace CursoOnline.Dominio.Cursos
 {
 
-    public class Curso
+    public class Curso : Entidade
     {
         public string Nome { get; }
         public string Descricao { get; }

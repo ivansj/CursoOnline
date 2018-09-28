@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursoOnline.DominioTest", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursoOnline.Dominio", "src\CursoOnline.Dominio\CursoOnline.Dominio.csproj", "{981F5E94-C7D8-48B6-820C-A884BD5D7117}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoOnline.Web", "src\CursoOnline.Web\CursoOnline.Web.csproj", "{E9EF7405-BFF4-4686-9D6D-97AFD5904FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoOnline.Dados", "src\CursoOnline.Dados\CursoOnline.Dados.csproj", "{4A8F3DE0-214B-493D-A799-F84FCDCE908C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{981F5E94-C7D8-48B6-820C-A884BD5D7117}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{981F5E94-C7D8-48B6-820C-A884BD5D7117}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{981F5E94-C7D8-48B6-820C-A884BD5D7117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9EF7405-BFF4-4686-9D6D-97AFD5904FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9EF7405-BFF4-4686-9D6D-97AFD5904FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9EF7405-BFF4-4686-9D6D-97AFD5904FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9EF7405-BFF4-4686-9D6D-97AFD5904FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A8F3DE0-214B-493D-A799-F84FCDCE908C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A8F3DE0-214B-493D-A799-F84FCDCE908C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A8F3DE0-214B-493D-A799-F84FCDCE908C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A8F3DE0-214B-493D-A799-F84FCDCE908C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
