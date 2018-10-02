@@ -16,9 +16,9 @@ namespace CursoOnline.DominioTest.Cursos
     {
         private readonly ITestOutputHelper _output;
         private readonly string _nome;
-        private readonly decimal _cargaHoraria;
+        private readonly double _cargaHoraria;
         private readonly PublicoAlvo _publicoAlvo;
-        private readonly decimal _valor;
+        private readonly double _valor;
         private readonly string _descricao;
 
         public CursoTeste(ITestOutputHelper output)
@@ -29,9 +29,9 @@ namespace CursoOnline.DominioTest.Cursos
             var faker = new Faker();
 
             _nome = faker.Random.Word();
-            _cargaHoraria = faker.Random.Decimal(50, 1000);
+            _cargaHoraria = faker.Random.Double(50, 1000);
             _publicoAlvo = PublicoAlvo.Estudante;
-            _valor = faker.Random.Decimal(100, 1000);
+            _valor = faker.Random.Double(100, 1000);
             _descricao = faker.Lorem.Paragraph();
                         
             _output.WriteLine($"Decimal {faker.Random.Decimal()}");
@@ -71,7 +71,7 @@ namespace CursoOnline.DominioTest.Cursos
         [InlineData(0.9)]
         [InlineData(0)]
         [InlineData(-100)]
-        public void NaoDeveCursoTerCargaHorariaMenorQue1(decimal cargaHorariaInvalida)
+        public void NaoDeveCursoTerCargaHorariaMenorQue1(double cargaHorariaInvalida)
         {            
             Assert.Throws<ArgumentException>(() =>
                 CursoBuilder.Novo().ComCargaHorario(cargaHorariaInvalida).Build())
@@ -82,7 +82,7 @@ namespace CursoOnline.DominioTest.Cursos
         [InlineData(0)]        
         [InlineData(-10.2)]
         [InlineData(-66)]
-        public void NaoDeveCursoTerValorMenorOuIgualAZero(decimal valrInvalido)
+        public void NaoDeveCursoTerValorMenorOuIgualAZero(double valrInvalido)
         {
             Assert.Throws<ArgumentException>(() =>
                 CursoBuilder.Novo().ComValor(valrInvalido).Build())

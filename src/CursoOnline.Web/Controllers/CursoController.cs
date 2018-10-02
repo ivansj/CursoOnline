@@ -1,8 +1,8 @@
-﻿using System.Linq;
+﻿using CursoOnline.Dominio.Base;
 using CursoOnline.Dominio.Cursos;
-using CursoOnline.Dominio.Base;
-using Microsoft.AspNetCore.Mvc;
 using CursoOnline.Web.Util;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace CursoOnline.Web.Controllers
 {

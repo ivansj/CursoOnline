@@ -21,9 +21,9 @@ namespace CursoOnline.DominioTest.Cursos
             {
                 Nome = fake.Random.Words(),
                 Descricao = fake.Lorem.Paragraph(),
-                CargaHoraria = fake.Random.Decimal(50, 100),
+                CargaHoraria = fake.Random.Double(50, 100),
                 PublicoAlvo = "Estudante",
-                Valor = fake.Random.Decimal(100, 3000)
+                Valor = fake.Random.Double(100, 3000)
             };
 
             _cursoRepositorioMock = new Mock<ICursoRepositorio>();
@@ -57,7 +57,7 @@ namespace CursoOnline.DominioTest.Cursos
         public void NaoDeveAdicionarCursoComMesmoNome()
         {
             var cursoJaSalvo = CursoBuilder.Novo().ComNome(_cursoDto.Nome).Build();
-            _cursoRepositorioMock.Setup(r => r.OBterPeloNome(_cursoDto.Nome)).Returns(cursoJaSalvo);
+            _cursoRepositorioMock.Setup(r => r.ObterPeloNome(_cursoDto.Nome)).Returns(cursoJaSalvo);
 
             Assert.Throws<ArgumentException>(() => _armazenadorDeCurso.Armazenar(_cursoDto))
                 .ComMensagem("Nome do curso já conta no banco de dados.");

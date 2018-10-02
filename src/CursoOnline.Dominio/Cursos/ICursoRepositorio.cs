@@ -4,6 +4,6 @@
     {
         void Adicionar(Curso curso);
         void Atualizar(Curso curso);
-        Curso OBterPeloNome(string nome);
+        Curso ObterPeloNome(string nome);
     }
 }

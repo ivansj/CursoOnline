@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CursoOnline.Dominio\CursoOnline.Dominio.csproj" />
+    <ProjectReference Include="..\CursoOnline.IoC\CursoOnline.IoC.csproj" />
   </ItemGroup>
 
 </Project>

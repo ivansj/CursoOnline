@@ -6,13 +6,18 @@ namespace CursoOnline.Dominio.Cursos
 
     public class Curso : Entidade
     {
-        public string Nome { get; }
-        public string Descricao { get; }
-        public decimal CargaHoraria { get; }
-        public PublicoAlvo PublicoAlvo { get; }
-        public decimal Valor { get;  }
+        public string Nome { get; private set; }
+        public string Descricao { get; private set; }
+        public double CargaHoraria { get; private set; }
+        public PublicoAlvo PublicoAlvo { get; private set; }
+        public double Valor { get; private set; }
 
-        public Curso(string nome, string descricao, decimal cargaHoraria, PublicoAlvo publicoAlvo, decimal valor)
+        private Curso()
+        {
+
+        }
+
+        public Curso(string nome, string descricao, double cargaHoraria, PublicoAlvo publicoAlvo, double valor)
         {
             if (string.IsNullOrWhiteSpace(nome))
                 throw new ArgumentException("Nome inválido");

@@ -6,9 +6,9 @@ namespace CursoOnline.DominioTest.Builders
     public class CursoBuilder
     {
         private string _nome = "Informática básica";
-        private decimal _cargaHoraria = 80m;
+        private double _cargaHoraria = 80.00;
         private PublicoAlvo _publicoAlvo = PublicoAlvo.Estudante;
-        private decimal _valor = 950m;
+        private double _valor = 950.00;
         private string _descricao = "Uma descrição";
 
         public static CursoBuilder Novo()
@@ -28,7 +28,7 @@ namespace CursoOnline.DominioTest.Builders
             return this;
         }
 
-        public CursoBuilder ComCargaHorario(decimal cargaHoraria)
+        public CursoBuilder ComCargaHorario(double cargaHoraria)
         {
             _cargaHoraria = cargaHoraria;
             return this;
@@ -40,7 +40,7 @@ namespace CursoOnline.DominioTest.Builders
             return this;
         }
 
-        public CursoBuilder ComValor(decimal valor)
+        public CursoBuilder ComValor(double valor)
         {
             _valor = valor;
             return this;
