@@ -50,7 +50,7 @@ namespace CursoOnline.DominioTest.Cursos
             _cursoDto.PublicoAlvo = publicoAlvoInvalido;
 
             Assert.Throws<ExcecaoDeDominio>(() => _armazenadorDeCurso.Armazenar(_cursoDto))
-                .ComMensagem("Publico Alvo inválido");
+                .ComMensagem(Resource.PublicoAlvoInvalido);
         }
 
         [Fact]
@@ -60,7 +60,7 @@ namespace CursoOnline.DominioTest.Cursos
             _cursoRepositorioMock.Setup(r => r.ObterPeloNome(_cursoDto.Nome)).Returns(cursoJaSalvo);
 
             Assert.Throws<ExcecaoDeDominio>(() => _armazenadorDeCurso.Armazenar(_cursoDto))
-                .ComMensagem("Nome do curso já consta no banco de dados.");
+                .ComMensagem(Resource.NomeCursoExistente);
         }
     }
 }
