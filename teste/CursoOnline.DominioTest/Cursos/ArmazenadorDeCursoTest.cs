@@ -62,5 +62,13 @@ namespace CursoOnline.DominioTest.Cursos
             Assert.Throws<ExcecaoDeDominio>(() => _armazenadorDeCurso.Armazenar(_cursoDto))
                 .ComMensagem(Resource.NomeCursoExistente);
         }
+
+        [Fact]
+        public void DeveAlterarDadosDoCurso()
+        {
+            _cursoDto.Id = 323;
+            var curso = CursoBuilder.Novo().Build();
+            //_cursoRepositorioMock.Setup(r => r.O)
+        }
     }
 }
