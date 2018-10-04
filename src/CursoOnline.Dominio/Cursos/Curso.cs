@@ -19,14 +19,11 @@ namespace CursoOnline.Dominio.Cursos
 
         public Curso(string nome, string descricao, double cargaHoraria, PublicoAlvo publicoAlvo, double valor)
         {
-            if (string.IsNullOrWhiteSpace(nome))
-                throw new ArgumentException("Nome inválido");
-
-            if(cargaHoraria <= 1)
-                throw new ArgumentException("Carga Horaria inválida");
-            
-            if (valor <= 0)
-                throw new ArgumentException("Valor inválido");
+            ValidadorDeRegra.Novo()
+                .Quando(string.IsNullOrWhiteSpace(nome), "Nome inválido")
+                .Quando(cargaHoraria <= 1, "Carga Horaria inválida")
+                .Quando(valor <= 0, "Valor inválido")
+                .DisperarExcecaoseExistir();           
 
             this.Nome = nome;
             this.Descricao = descricao;

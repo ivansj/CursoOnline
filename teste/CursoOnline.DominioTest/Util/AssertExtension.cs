@@ -1,13 +1,15 @@
-﻿using System;
+﻿using CursoOnline.Dominio.Base;
+using System;
 using Xunit;
 
 namespace CursoOnline.DominioTest.Util
 {
     public static class AssertExtension
     {
-        public static void ComMensagem(this ArgumentException exception, string mensagem)
+        public static void ComMensagem(this ExcecaoDeDominio exception, string mensagem)
         {
-            if (string.Equals(exception?.Message, mensagem))
+            //if (string.Equals(exception?.Message, mensagem))
+            if(exception.MensagensDeErro.Contains(mensagem))
                 Assert.True(true);
             else
                 Assert.True(false, $"Esperava a mensagem '{mensagem}'");
