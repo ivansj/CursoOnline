@@ -1,9 +1,9 @@
-﻿namespace CursoOnline.Dominio.Cursos
+﻿using CursoOnline.Dominio.Base;
+
+namespace CursoOnline.Dominio.Cursos
 {
-    public interface ICursoRepositorio
-    {
-        void Adicionar(Curso curso);
-        void Atualizar(Curso curso);
+    public interface ICursoRepositorio : IRepositorio<Curso>
+    {       
         Curso ObterPeloNome(string nome);
     }
 }
