@@ -13,4 +13,13 @@
     <ProjectReference Include="..\CursoOnline.IoC\CursoOnline.IoC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Aluno\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Aluno\NovoOuEditar.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>

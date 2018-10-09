@@ -1,15 +1,16 @@
-﻿using System;
-using CursoOnline.Dominio.Base;
-using CursoOnline.Dominio.Cursos;
+﻿using CursoOnline.Dominio.Base;
+using CursoOnline.Dominio.PublicosAlvo;
 
 namespace CursoOnline.Dominio.Alunos
 {
-    public class Aluno
+    public class Aluno : Entidade
     {
         public string Nome { get; private set; }
         public string Cpf { get; private set; }
         public string Email { get; private set; }
         public PublicoAlvo PublicoAlvo { get; private set; }
+
+        private Aluno() { }
 
         public Aluno(string nome, string cpf, string email, PublicoAlvo publicoAlvo)
         {

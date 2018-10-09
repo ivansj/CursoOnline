@@ -1,4 +1,5 @@
 ﻿using CursoOnline.Dominio.Cursos;
+using CursoOnline.Dominio.PublicosAlvo;
 using System;
 
 namespace CursoOnline.DominioTest.Builders

@@ -2,7 +2,7 @@
 using Bogus.Extensions.Brazil;
 using CursoOnline.Dominio.Alunos;
 using CursoOnline.Dominio.Base;
-using CursoOnline.Dominio.Cursos;
+using CursoOnline.Dominio.PublicosAlvo;
 using CursoOnline.DominioTest.Builders;
 using CursoOnline.DominioTest.Util;
 using ExpectedObjects;
@@ -57,6 +57,7 @@ namespace CursoOnline.DominioTest.Alunos
         [Theory]
         [InlineData("0000000000")]
         [InlineData("999999999")]
+        [InlineData("Invalido")]
         [InlineData(null)]
         public void NaoDeveAlunoTerCpfInvalido(string cpfInvalido)
         {

@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using CursoOnline.Dominio.Base;
 using CursoOnline.Dominio.Cursos;
+using CursoOnline.Dominio.PublicosAlvo;
 using CursoOnline.DominioTest.Builders;
 using CursoOnline.DominioTest.Util;
 using ExpectedObjects;
