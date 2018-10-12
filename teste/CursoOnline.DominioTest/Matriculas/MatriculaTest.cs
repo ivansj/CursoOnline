@@ -85,6 +85,21 @@ namespace CursoOnline.DominioTest.Matriculas
 
             Assert.True(matricula.TemDesconto);
         }
+
+        [Fact]
+        public void NaoDeveTerCursoComPublicoAlvoDiferenteDoAluno()
+        {
+            var curso = CursoBuilder.Novo().ComPublicoAlvo(Dominio.PublicosAlvo.PublicoAlvo.Estudante).Build();
+            var aluno = AlunoBuilder.Novo().ComPublicoAlvo(Dominio.PublicosAlvo.PublicoAlvo.Empregado).Build();
+
+            Assert.Throws<ExcecaoDeDominio>(() =>
+               MatriculaBuilder.Novo()
+               .ComCurso(curso)
+               .ComAluno(aluno)
+               .Build())
+               .ComMensagem(Resource.PublicoAlvoCursoDiferenteDoAluno);
+        }
+
     }
 
     

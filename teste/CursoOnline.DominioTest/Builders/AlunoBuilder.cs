@@ -35,6 +35,12 @@ namespace CursoOnline.DominioTest.Builders
             return this;
         }
 
+        public AlunoBuilder ComPublicoAlvo(PublicoAlvo publicoAlvo)
+        {
+            _publicoAlvo = publicoAlvo;
+            return this;
+        }
+
         public AlunoBuilder ComId(int id)
         {
             _id = id;
@@ -52,6 +58,6 @@ namespace CursoOnline.DominioTest.Builders
             return aluno;
         }
 
-        
+       
     }
 }

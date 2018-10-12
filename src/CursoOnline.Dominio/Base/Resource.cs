@@ -14,5 +14,6 @@
         public static readonly string CursoInvalido = "Curso inválido";
         public static readonly string ValorPagoInvalido = "Valor Pago inválido";
         public static readonly string ValorPagoMaiorQueCurso = "Valor pago não pode ser maior que valor do curso";
+        public static readonly string PublicoAlvoCursoDiferenteDoAluno = "Publico alvo do curso não pode ser diferente do publico alvo do aluno";
     }
 }

@@ -4,7 +4,7 @@ using CursoOnline.Dominio.Cursos;
 
 namespace CursoOnline.Dominio.Matriculas
 {
-    public class Matricula
+    public class Matricula : Entidade
     {
         public Aluno Aluno { get; private set; }
         public Curso Curso { get; private set; }
@@ -18,6 +18,7 @@ namespace CursoOnline.Dominio.Matriculas
                .Quando(curso == null, Resource.CursoInvalido)
                .Quando(valorPago < 1, Resource.ValorPagoInvalido)
                .Quando(curso != null && valorPago > curso.Valor, Resource.ValorPagoMaiorQueCurso)
+               .Quando(curso != null && aluno != null && curso.PublicoAlvo != aluno.PublicoAlvo, Resource.PublicoAlvoCursoDiferenteDoAluno)
                .DisperarExcecaoseExistir();
 
             this.Aluno = aluno;
