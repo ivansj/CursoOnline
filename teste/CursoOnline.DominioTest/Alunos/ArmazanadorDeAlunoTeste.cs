@@ -45,16 +45,7 @@ namespace CursoOnline.DominioTest.Alunos
                 );
         }
 
-        //[Fact]
-        //public void NaoDeveAdicionarPublicoAlvoInvalido()
-        //{
-        //    const string publicoAlvoInvalido = "Operario";
-        //    _alunoDto.PublicoAlvo = publicoAlvoInvalido;
-
-        //    Assert.Throws<ExcecaoDeDominio>(() => _armazenadorDeAluno.Armazenar(_alunoDto))
-        //        .ComMensagem(Resource.PublicoAlvoInvalido);
-        //}
-
+      
         [Fact]
         public void NaoDeveAdicionarAlunoComMesmoCpf()
         {

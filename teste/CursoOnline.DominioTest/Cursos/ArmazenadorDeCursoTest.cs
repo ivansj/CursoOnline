@@ -45,16 +45,6 @@ namespace CursoOnline.DominioTest.Cursos
             ));            
         }
 
-        //[Fact]
-        //public void NaoDeveInformarPublicoAlvoInvalido()
-        //{
-        //    const string publicoAlvoInvalido = "Medico";
-        //    _cursoDto.PublicoAlvo = publicoAlvoInvalido;
-
-        //    Assert.Throws<ExcecaoDeDominio>(() => _armazenadorDeCurso.Armazenar(_cursoDto))
-        //        .ComMensagem(Resource.PublicoAlvoInvalido);
-        //}
-
         [Fact]
         public void NaoDeveAdicionarCursoComMesmoNome()
         {
