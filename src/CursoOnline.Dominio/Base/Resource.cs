@@ -3,6 +3,7 @@
     public static class Resource
     {
         public static readonly string NomeInvalido = "Nome inválido";
+        //public const string NomeInvalido = "Nome inválido";
         public static readonly string CargaHorariaInvalida = "Carga Horaria inválida";
         public static readonly string ValorInvalido = "Valor inválido";
         public static readonly string PublicoAlvoInvalido = "Publico Alvo inválido";
@@ -17,5 +18,9 @@
         public static readonly string PublicoAlvoCursoDiferenteDoAluno = "Publico alvo do curso não pode ser diferente do publico alvo do aluno";
         public static readonly string CursoNaoEncontrado = "Curso não encontrado";
         public static readonly string AlunoNaoEncontrado = "Aluno não encontrado";
+        public static readonly string NotaDoAlunoInvalida = "Nota do aluno inválida";
+        public static readonly string MatriculaNaoEncontrada = "Matricula não encontrada";
+        public static readonly string MatriculaCancelada = "Não é possivel essa ação para matricula cancelada";
+        public static readonly string MatriculaConcluida = "Não é possivel essa ação para matricula concluida";
     }
 }

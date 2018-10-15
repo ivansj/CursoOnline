@@ -1,4 +1,5 @@
-﻿using CursoOnline.Dominio.Alunos;
+﻿using System;
+using CursoOnline.Dominio.Alunos;
 using CursoOnline.Dominio.Base;
 using CursoOnline.Dominio.Cursos;
 
@@ -10,6 +11,9 @@ namespace CursoOnline.Dominio.Matriculas
         public Curso Curso { get; private set; }
         public double ValorPago { get; private set; }
         public bool TemDesconto { get; private set; }
+        public double NotaDoAluno { get; private set; }
+        public bool CursoConcluido { get; private set; }
+        public bool Cancelada { get; private set; }
 
         public Matricula(Aluno aluno, Curso curso, double valorPago)
         {
@@ -25,6 +29,26 @@ namespace CursoOnline.Dominio.Matriculas
             this.Curso = curso;
             this.ValorPago = valorPago;
             this.TemDesconto = valorPago < curso.Valor;
+        }
+
+        public void InformarNota(double notaDoAluno)
+        {
+            ValidadorDeRegra.Novo()               
+               .Quando(notaDoAluno < 0 || notaDoAluno > 10, Resource.NotaDoAlunoInvalida)
+               .Quando(Cancelada, Resource.MatriculaCancelada)
+               .DisperarExcecaoseExistir();
+
+            this.NotaDoAluno = notaDoAluno;
+            this.CursoConcluido = true;
+        }
+
+        public void Cancelar()
+        {
+            ValidadorDeRegra.Novo()               
+               .Quando(CursoConcluido, Resource.MatriculaConcluida)
+               .DisperarExcecaoseExistir();
+
+            Cancelada = true;
         }
     }
 }

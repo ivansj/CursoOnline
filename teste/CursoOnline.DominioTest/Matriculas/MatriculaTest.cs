@@ -100,6 +100,78 @@ namespace CursoOnline.DominioTest.Matriculas
                .ComMensagem(Resource.PublicoAlvoCursoDiferenteDoAluno);
         }
 
+        [Fact]
+        public void DeveInformarNotaDoAluno()
+        {
+            var notaDoAlunoEsperada = _faker.Random.Double(0 ,10);
+            var matricula = MatriculaBuilder.Novo().Build();
+
+            matricula.InformarNota(notaDoAlunoEsperada);
+
+            Assert.Equal(notaDoAlunoEsperada, matricula.NotaDoAluno);
+        }
+
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(11)]
+        [InlineData(10.1)]
+        public void NaoDeveInformarNotaInvalida(double notaDoAlunoInvalida)
+        {
+            var matricula = MatriculaBuilder.Novo().Build();                       
+
+            Assert.Throws<ExcecaoDeDominio>(() =>
+             matricula.InformarNota(notaDoAlunoInvalida))
+             .ComMensagem(Resource.NotaDoAlunoInvalida);
+        }
+
+        [Fact]
+        public void DeveIndicarQueCursoFoiConcluido()
+        {
+            var notaDoAlunoEsperada = _faker.Random.Double(0, 10);
+            var matricula = MatriculaBuilder.Novo().Build();
+
+            matricula.InformarNota(notaDoAlunoEsperada);
+
+            Assert.True(matricula.CursoConcluido);
+        }
+
+        [Fact]
+        public void DeveCancelarMatricula()
+        {
+            var matricula = MatriculaBuilder.Novo().Build();
+
+            matricula.Cancelar();
+
+            Assert.True(matricula.Cancelada);
+        }
+
+        [Fact]
+        public void NaoDeveInformarNotaQuandoMatriculaEstiverCancelada()
+        {
+            var matricula = MatriculaBuilder.Novo()
+                .ComCancelada(true)
+                .Build();
+            var notaDoAluno = _faker.Random.Double(0, 10);
+
+            //matricula.Cancelar();
+
+            Assert.Throws<ExcecaoDeDominio>(() =>
+             matricula.InformarNota(notaDoAluno))
+             .ComMensagem(Resource.MatriculaCancelada);
+        }
+
+        [Fact]
+        public void NaoDeveCancelarMatriculaConcluida()
+        {
+            var matricula = MatriculaBuilder.Novo()
+                .ComConcluido(true)
+                .Build();           
+            //matricula.Cancelar();
+
+            Assert.Throws<ExcecaoDeDominio>(() =>
+             matricula.Cancelar())
+             .ComMensagem(Resource.MatriculaConcluida);
+        }        
     }
 
     
