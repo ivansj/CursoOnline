@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 
 namespace CursoOnline.Dominio.Base
 {
@@ -32,9 +31,9 @@ namespace CursoOnline.Dominio.Base
                 throw new ExcecaoDeDominio(_mensagensDeErro);
         }
 
-        
+
     }
-        
+
     public class ExcecaoDeDominio : ArgumentException
     {
         public List<string> MensagensDeErro { get; set; }
@@ -42,6 +41,6 @@ namespace CursoOnline.Dominio.Base
         public ExcecaoDeDominio(List<string> mensagensDeErro)
         {
             MensagensDeErro = mensagensDeErro;
-        }    
+        }
     }
 }

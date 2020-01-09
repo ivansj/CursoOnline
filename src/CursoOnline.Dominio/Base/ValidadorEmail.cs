@@ -1,6 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace CursoOnline.Dominio.Base
 {
@@ -18,6 +16,6 @@ namespace CursoOnline.Dominio.Base
             return regex.IsMatch(email?.Trim());
         }
 
-       
+
     }
 }

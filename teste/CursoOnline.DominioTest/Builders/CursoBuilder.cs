@@ -65,6 +65,6 @@ namespace CursoOnline.DominioTest.Builders
             }
             return curso;
         }
-        
+
     }
 }

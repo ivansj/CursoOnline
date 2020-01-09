@@ -1,6 +1,5 @@
 ﻿using CursoOnline.Dominio.Base;
 using CursoOnline.Dominio.PublicosAlvo;
-using System;
 
 namespace CursoOnline.Dominio.Cursos
 {
@@ -19,7 +18,7 @@ namespace CursoOnline.Dominio.Cursos
         public void Armazenar(CursoDto cursoDto)
         {
             var cursoJaSalvo = _cursoRepositorio.ObterPeloNome(cursoDto.Nome);
-            
+
             ValidadorDeRegra.Novo()
                 //.Quando(cursoJaSalvo != null, Resource.NomeCursoExistente)
                 .Quando(cursoJaSalvo != null && cursoJaSalvo.Id != cursoDto.Id,
@@ -28,7 +27,7 @@ namespace CursoOnline.Dominio.Cursos
                 .DisperarExcecaoseExistir();
 
             var publicoAlvo = _conversorDePublicoAlvo.Converter(cursoDto.PublicoAlvo);
-           
+
             if (cursoDto.Id > 0)
             {
                 var curso = _cursoRepositorio.ObterPorId(cursoDto.Id);

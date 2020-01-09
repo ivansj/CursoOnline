@@ -45,7 +45,7 @@ namespace CursoOnline.DominioTest.Alunos
                 );
         }
 
-      
+
         [Fact]
         public void NaoDeveAdicionarAlunoComMesmoCpf()
         {

@@ -1,5 +1,4 @@
-﻿using System;
-using CursoOnline.Dominio.Alunos;
+﻿using CursoOnline.Dominio.Alunos;
 using CursoOnline.Dominio.Base;
 using CursoOnline.Dominio.Cursos;
 
@@ -33,7 +32,7 @@ namespace CursoOnline.Dominio.Matriculas
 
         public void InformarNota(double notaDoAluno)
         {
-            ValidadorDeRegra.Novo()               
+            ValidadorDeRegra.Novo()
                .Quando(notaDoAluno < 0 || notaDoAluno > 10, Resource.NotaDoAlunoInvalida)
                .Quando(Cancelada, Resource.MatriculaCancelada)
                .DisperarExcecaoseExistir();
@@ -44,7 +43,7 @@ namespace CursoOnline.Dominio.Matriculas
 
         public void Cancelar()
         {
-            ValidadorDeRegra.Novo()               
+            ValidadorDeRegra.Novo()
                .Quando(CursoConcluido, Resource.MatriculaConcluida)
                .DisperarExcecaoseExistir();
 

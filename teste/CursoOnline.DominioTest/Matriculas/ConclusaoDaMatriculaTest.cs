@@ -24,7 +24,7 @@ namespace CursoOnline.DominioTest.Matriculas
 
         [Fact]
         public void DeveInformarNotaDoAluno()
-        {           
+        {
 
             var matricula = MatriculaBuilder.Novo().Build();
             var notaEsperada = _faker.Random.Double(0, 10);
@@ -49,5 +49,5 @@ namespace CursoOnline.DominioTest.Matriculas
                 _conclusaoDaMatricula.Concluir(matriculaIdInvalida, notaAluno))
                 .ComMensagem(Resource.MatriculaNaoEncontrada);
         }
-    }   
+    }
 }

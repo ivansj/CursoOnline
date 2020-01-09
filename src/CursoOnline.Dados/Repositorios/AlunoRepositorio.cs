@@ -14,6 +14,6 @@ namespace CursoOnline.Dados.Repositorios
         {
             return Context.Set<Aluno>().FirstOrDefault(c => c.Cpf.Equals(cpf));
         }
-    
+
     }
 }

@@ -18,7 +18,7 @@ namespace CursoOnline.DominioTest.Matriculas
         [Fact]
         public void DeveCriarMatricula()
         {
-            var curso = CursoBuilder.Novo().Build(); 
+            var curso = CursoBuilder.Novo().Build();
             var matriculaEsperada = new
             {
                 Aluno = AlunoBuilder.Novo().Build(),
@@ -103,7 +103,7 @@ namespace CursoOnline.DominioTest.Matriculas
         [Fact]
         public void DeveInformarNotaDoAluno()
         {
-            var notaDoAlunoEsperada = _faker.Random.Double(0 ,10);
+            var notaDoAlunoEsperada = _faker.Random.Double(0, 10);
             var matricula = MatriculaBuilder.Novo().Build();
 
             matricula.InformarNota(notaDoAlunoEsperada);
@@ -117,7 +117,7 @@ namespace CursoOnline.DominioTest.Matriculas
         [InlineData(10.1)]
         public void NaoDeveInformarNotaInvalida(double notaDoAlunoInvalida)
         {
-            var matricula = MatriculaBuilder.Novo().Build();                       
+            var matricula = MatriculaBuilder.Novo().Build();
 
             Assert.Throws<ExcecaoDeDominio>(() =>
              matricula.InformarNota(notaDoAlunoInvalida))
@@ -165,14 +165,14 @@ namespace CursoOnline.DominioTest.Matriculas
         {
             var matricula = MatriculaBuilder.Novo()
                 .ComConcluido(true)
-                .Build();           
+                .Build();
             //matricula.Cancelar();
 
             Assert.Throws<ExcecaoDeDominio>(() =>
              matricula.Cancelar())
              .ComMensagem(Resource.MatriculaConcluida);
-        }        
+        }
     }
 
-    
+
 }

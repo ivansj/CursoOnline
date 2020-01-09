@@ -11,11 +11,10 @@ namespace CursoOnline.Dominio.PublicosAlvo
 
         public PublicoAlvo Converter(string publicoAlvo)
         {
-            PublicoAlvo publicoAlvoConvertido;
             ValidadorDeRegra.Novo()
-                .Quando(!Enum.TryParse(publicoAlvo, out publicoAlvoConvertido), Resource.PublicoAlvoInvalido)
+                .Quando(!Enum.TryParse(publicoAlvo, out PublicoAlvo publicoAlvoConvertido), Resource.PublicoAlvoInvalido)
                 .DisperarExcecaoseExistir();
-            
+
             return publicoAlvoConvertido;
         }
     }

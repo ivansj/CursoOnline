@@ -34,15 +34,15 @@ namespace CursoOnline.DominioTest.Cursos
 
         [Fact]
         public void DeveAdicionarCurso()
-        {                
+        {
             _armazenadorDeCurso.Armazenar(_cursoDto);
 
             _cursoRepositorioMock.Verify(r => r
                 .Adicionar(It
                 .Is<Curso>(
-                    c => string.Equals(c.Nome, _cursoDto.Nome) && 
+                    c => string.Equals(c.Nome, _cursoDto.Nome) &&
                     string.Equals(c.Descricao, _cursoDto.Descricao))
-            ));            
+            ));
         }
 
         [Fact]

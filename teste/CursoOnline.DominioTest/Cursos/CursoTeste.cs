@@ -12,8 +12,8 @@ namespace CursoOnline.DominioTest.Cursos
     /// <summary>
     /// Teste de Curso
     /// </summary>
-    public class CursoTeste 
-    {        
+    public class CursoTeste
+    {
         private readonly Faker _faker;
         private readonly string _nome;
         private readonly double _cargaHoraria;
@@ -45,7 +45,7 @@ namespace CursoOnline.DominioTest.Cursos
                 Descricao = _descricao
             };
 
-            var curso = new Curso(cursoEsperado.Nome, cursoEsperado.Descricao, cursoEsperado.CargaHoraria, 
+            var curso = new Curso(cursoEsperado.Nome, cursoEsperado.Descricao, cursoEsperado.CargaHoraria,
                 cursoEsperado.PublicoAlvo, cursoEsperado.Valor);
 
             cursoEsperado.ToExpectedObject().ShouldMatch(curso);
@@ -55,10 +55,10 @@ namespace CursoOnline.DominioTest.Cursos
         [InlineData("")]
         [InlineData(null)]
         public void NaoDeveCursoTerNomeInvalido(string nomeInvalido)
-        {           
+        {
             Assert.Throws<ExcecaoDeDominio>(() =>
                 CursoBuilder.Novo().ComNome(nomeInvalido).Build())
-                .ComMensagem(Resource.NomeInvalido);            
+                .ComMensagem(Resource.NomeInvalido);
         }
 
         [Theory]
@@ -66,21 +66,21 @@ namespace CursoOnline.DominioTest.Cursos
         [InlineData(0)]
         [InlineData(-100)]
         public void NaoDeveCursoTerCargaHorariaMenorQue1(double cargaHorariaInvalida)
-        {            
+        {
             Assert.Throws<ExcecaoDeDominio>(() =>
                 CursoBuilder.Novo().ComCargaHorario(cargaHorariaInvalida).Build())
-                .ComMensagem(Resource.CargaHorariaInvalida);            
+                .ComMensagem(Resource.CargaHorariaInvalida);
         }
 
         [Theory]
-        [InlineData(0)]        
+        [InlineData(0)]
         [InlineData(-10.2)]
         [InlineData(-66)]
         public void NaoDeveCursoTerValorMenorOuIgualAZero(double valrInvalido)
         {
             Assert.Throws<ExcecaoDeDominio>(() =>
                 CursoBuilder.Novo().ComValor(valrInvalido).Build())
-                .ComMensagem(Resource.ValorInvalido);            
+                .ComMensagem(Resource.ValorInvalido);
         }
 
         [Fact]
@@ -153,5 +153,5 @@ namespace CursoOnline.DominioTest.Cursos
                 curso.AlterarValor(valorInvalido))
                 .ComMensagem(Resource.ValorInvalido);
         }
-    }    
+    }
 }

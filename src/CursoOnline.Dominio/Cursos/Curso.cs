@@ -23,19 +23,19 @@ namespace CursoOnline.Dominio.Cursos
                 .Quando(string.IsNullOrWhiteSpace(nome), Resource.NomeInvalido)
                 .Quando(cargaHoraria <= 1, Resource.CargaHorariaInvalida)
                 .Quando(valor <= 0, Resource.ValorInvalido)
-                .DisperarExcecaoseExistir();           
+                .DisperarExcecaoseExistir();
 
             this.Nome = nome;
             this.Descricao = descricao;
             this.CargaHoraria = cargaHoraria;
             this.PublicoAlvo = publicoAlvo;
-            this.Valor = valor;                        
+            this.Valor = valor;
         }
 
         public void AlterarNome(string nome)
         {
             ValidadorDeRegra.Novo()
-              .Quando(string.IsNullOrWhiteSpace(nome), Resource.NomeInvalido)              
+              .Quando(string.IsNullOrWhiteSpace(nome), Resource.NomeInvalido)
               .DisperarExcecaoseExistir();
 
             this.Nome = nome;
@@ -43,8 +43,8 @@ namespace CursoOnline.Dominio.Cursos
 
         public void AlterarCargaHoraria(double cargaHoraria)
         {
-            ValidadorDeRegra.Novo()              
-              .Quando(cargaHoraria <= 1, Resource.CargaHorariaInvalida)              
+            ValidadorDeRegra.Novo()
+              .Quando(cargaHoraria <= 1, Resource.CargaHorariaInvalida)
               .DisperarExcecaoseExistir();
 
             this.CargaHoraria = cargaHoraria;
@@ -52,7 +52,7 @@ namespace CursoOnline.Dominio.Cursos
 
         public void AlterarValor(double valor)
         {
-            ValidadorDeRegra.Novo()             
+            ValidadorDeRegra.Novo()
              .Quando(valor <= 0, Resource.ValorInvalido)
              .DisperarExcecaoseExistir();
 

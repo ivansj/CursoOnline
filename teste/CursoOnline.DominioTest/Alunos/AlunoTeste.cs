@@ -36,7 +36,7 @@ namespace CursoOnline.DominioTest.Alunos
                 Nome = _nome,
                 Cpf = _cpf,
                 Email = _email,
-                PublicoAlvo = _publicoAlvo                
+                PublicoAlvo = _publicoAlvo
             };
 
             var aluno = new Aluno(alunoEsperado.Nome, alunoEsperado.Cpf, alunoEsperado.Email, alunoEsperado.PublicoAlvo);

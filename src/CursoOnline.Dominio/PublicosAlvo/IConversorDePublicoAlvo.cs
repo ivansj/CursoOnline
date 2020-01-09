@@ -1,10 +1,7 @@
-﻿using CursoOnline.Dominio.Base;
-using System;
-
-namespace CursoOnline.Dominio.PublicosAlvo
+﻿namespace CursoOnline.Dominio.PublicosAlvo
 {
     public interface IConversorDePublicoAlvo
     {
-        PublicoAlvo Converter(string publicoAlvo);        
+        PublicoAlvo Converter(string publicoAlvo);
     }
 }

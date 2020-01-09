@@ -2,7 +2,6 @@
 using CursoOnline.IoC;
 using CursoOnline.Web.Filters;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -27,28 +26,27 @@ namespace CursoOnline.Web
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = _ => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
 
             services.AddMvc(config =>
             {
                 config.Filters.Add(typeof(CustomExceptionFilter));
+                config.EnableEndpointRouting = false;
             })
-            .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            .SetCompatibilityVersion(CompatibilityVersion.Latest);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
             app.Use(async (context, next) =>
             {
-                await next.Invoke();
+                await next.Invoke().ConfigureAwait(false);
 
                 var unitOfWork = (IUnitOfWork)context.RequestServices.GetService(typeof(IUnitOfWork));
-                await unitOfWork.Commit();
-
+                await unitOfWork.Commit().ConfigureAwait(false);
             });
 
             //if (env.IsDevelopment())

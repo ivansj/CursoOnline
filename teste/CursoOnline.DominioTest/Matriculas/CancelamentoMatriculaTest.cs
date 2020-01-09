@@ -12,10 +12,10 @@ namespace CursoOnline.DominioTest.Matriculas
     public class CancelamentoMatriculaTest
     {
         Mock<IMatriculaRepositorio> _matriculaRepositorioMock;
-        CancelamentoDaMatricula _cancelamentoDaMatricula;        
+        CancelamentoDaMatricula _cancelamentoDaMatricula;
 
         public CancelamentoMatriculaTest()
-        {            
+        {
             _matriculaRepositorioMock = new Mock<IMatriculaRepositorio>();
             _cancelamentoDaMatricula = new CancelamentoDaMatricula(_matriculaRepositorioMock.Object);
         }
@@ -23,7 +23,7 @@ namespace CursoOnline.DominioTest.Matriculas
         [Fact]
         public void DeveCancelarMatricula()
         {
-            var matricula = MatriculaBuilder.Novo().Build();            
+            var matricula = MatriculaBuilder.Novo().Build();
 
             _matriculaRepositorioMock.Setup(r => r.ObterPorId(matricula.Id)).Returns(matricula);
 
@@ -38,7 +38,7 @@ namespace CursoOnline.DominioTest.Matriculas
             Faker faker = new Faker();
             Matricula matriculaInvalida = null;
             var matriculaIdInvalida = faker.Random.Int(1, 9999999);
-            
+
             _matriculaRepositorioMock.Setup(r => r.ObterPorId(It.IsAny<int>())).Returns(matriculaInvalida);
 
             Assert.Throws<ExcecaoDeDominio>(() =>
@@ -47,5 +47,5 @@ namespace CursoOnline.DominioTest.Matriculas
         }
     }
 
-   
+
 }

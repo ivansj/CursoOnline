@@ -58,6 +58,6 @@ namespace CursoOnline.DominioTest.Builders
             return aluno;
         }
 
-       
+
     }
 }

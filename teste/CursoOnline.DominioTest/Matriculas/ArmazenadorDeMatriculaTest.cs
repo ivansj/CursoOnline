@@ -82,7 +82,7 @@ namespace CursoOnline.DominioTest.Matriculas
         {
             Curso cursoInvalido = null;
             _cursoRepositorioMock.Setup(r => r.ObterPorId(_matriculaDto.CursoId)).Returns(cursoInvalido);
-                      
+
 
             Assert.Throws<ExcecaoDeDominio>(() =>
                 _armazenadorDeMatricula.Armazenar(_matriculaDto))

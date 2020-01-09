@@ -1,5 +1,4 @@
-﻿using System;
-using Bogus;
+﻿using Bogus;
 using CursoOnline.Dominio.Alunos;
 using CursoOnline.Dominio.Cursos;
 using CursoOnline.Dominio.Matriculas;
@@ -27,7 +26,7 @@ namespace MatriculaOnline.DominioTest.Builders
             };
         }
 
-       
+
         public MatriculaBuilder ComAluno(Aluno aluno)
         {
             _aluno = aluno;
@@ -86,6 +85,6 @@ namespace MatriculaOnline.DominioTest.Builders
             return matricula;
         }
 
-      
+
     }
 }

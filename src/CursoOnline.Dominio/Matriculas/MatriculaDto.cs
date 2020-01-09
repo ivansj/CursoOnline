@@ -1,7 +1,4 @@
-﻿using CursoOnline.Dominio.Alunos;
-using CursoOnline.Dominio.Cursos;
-
-namespace CursoOnline.Dominio.Matriculas
+﻿namespace CursoOnline.Dominio.Matriculas
 {
     public class MatriculaDto
     {

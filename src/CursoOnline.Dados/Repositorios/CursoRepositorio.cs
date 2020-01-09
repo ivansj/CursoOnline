@@ -13,6 +13,6 @@ namespace CursoOnline.Dados.Repositorios
         public Curso ObterPeloNome(string nome)
         {
             return Context.Set<Curso>().FirstOrDefault(c => c.Nome.Equals(nome));
-        }      
+        }
     }
 }
